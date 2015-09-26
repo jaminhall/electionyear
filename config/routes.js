@@ -32,13 +32,18 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-    '/': {
+
+    '/': [{
+        policy: 'sessionAuth'
+    }, {
         view: 'homepage'
+    }],
+
+    '/login': {
+        view: 'users/login'
     },
 
-    '/signup': {
-        view: 'users/signup'
-    },
+    'post /session/create': 'SessionController.create'
 
     /***************************************************************************
      *                                                                          *
