@@ -2,3 +2,25 @@
 
 
 <p>This page will become the lobby where users can find tables to play election year, chat, or view stats.</p>
+
+
+
+
+<script>
+    var socket = io.connect('http://localhost:1337');
+
+    socket.on('connect', function () {
+        socket.request('/user', {}, function (users) {
+            console.log(users);
+        });
+        socket.on('message', function (message) {
+            console.log(message);
+        });
+    });
+
+    /*
+    io.socket.on("user", function (event) {
+        console.log(event);
+    });
+    */
+</script>

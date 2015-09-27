@@ -68,15 +68,15 @@ module.exports = {
                 user.save(function (err, user) {
                     if (err) return next(err);
 
-                    /*
+
                     // Inform other sockets (e.g. connected sockets that are subscribed) that this user is now logged in
                     User.publishUpdate(user.id, {
-                        loggedIn: true,
+                        online: true,
                         id: user.id,
-                        name: user.name,
+                        username: user.username,
                         action: ' has logged in.'
                     });
-
+                    /*
                     // If the user is also an admin redirect to the user list (e.g. /views/user/index.ejs)
                     // This is used in conjunction with config/policies.js file
                     if (req.session.User.admin) {
